@@ -1,0 +1,52 @@
+test_config:
+  name: "config"
+  child_config:
+    name: "child_config"
+redis:
+  codis:
+    addr: "127.0.0.1:6379"
+    password: "foobared"
+    db: 0
+  redisSale:
+    addr: "127.0.0.1:6379"
+    password: "foobared"
+    db: 0
+  redisApiBusinessTwo:
+    addr: "127.0.0.1:6379"
+    password: "foobared"
+    db: 0
+  #redis锁服务器
+  redlock_0:
+    addr: "127.0.0.1:6379"
+    password: "foobared"
+    db: 0
+etcd:
+  - "127.0.0.1:2379"
+  - "127.0.0.1:2389"
+testbool: true
+testint32: 123
+testint64: -456
+testUint32: 321
+testUint64: 654
+testUint: 789
+testfloat: 1.23401
+testtime: "2010-01-02 03:04:05 +0000 UTC"
+testDuration: 1s
+testIntSlice:
+  - 0
+  - 9
+  - 8
+testStringMap:
+  test1: 4
+  test2: 5
+  test3: 6
+testStringMapString:
+  test4: "test4"
+  test5: "test5"
+  test6: "test6"
+testStringMapStringSlice:
+  testStringSlice:
+    - "test0"
+    - "test1"
+    - "test2"
+testBytes: 6134

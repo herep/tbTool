@@ -1,0 +1,21 @@
+---
+kind: pipeline
+name: default
+type: docker
+
+steps:
+  - name: copy-ssh-key
+    image: reg.weipaitang.com/cicd/ansible:testingV2
+    commands:
+      - cp -r /root/.ssh/ ./.ssh
+  - name: exec-lint-gomod
+    image: reg.weipaitang.com/micro/golangci
+    commands:
+      - ./hack/entry.sh
+      - export export GOSUMDB=sum.golang.google.cn;export GONOSUMDB=gitlab.xfq.com
+      - go test -gcflags='-l' -v ./... -cover
+      - lint golangci
+
+
+
+# Don't delete this line
